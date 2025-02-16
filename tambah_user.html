@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar untuk tombol navigasi */
+        .sidebar {
+            width: 250px;
+            background-color: #2575fc;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 50%;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #6a11cb;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-left: 100px; /* Menggeser konten utama ke kanan */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #2575fc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #6a11cb;
+        }
+
+        .back-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            background-color: #ccc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            margin: 20px auto;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background-color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Sidebar untuk tombol navigasi -->
+    <div class="sidebar">
+        <a href="kategori.html">Kategori</a>
+        <a href="produk.html">Produk</a>
+        <a href="user.html">User</a>
+        <a href="login.html" class="btn-logout">Keluar</a>
+    </div>
+
+    <!-- Konten Utama Tambah User -->
+    <div class="main-content">
+        <h2>Tambah User</h2>
+
+        <!-- Form untuk menambah user -->
+        <div class="form-container">
+            <form id="formTambahUser">
+                <div class="form-group">
+                    <label for="namaUser">Nama User</label>
+                    <input type="text" id="namaUser" name="namaUser" required placeholder="Masukkan nama user">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailUser">Email User</label>
+                    <input type="email" id="emailUser" name="emailUser" required placeholder="Masukkan email user">
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordUser">Password User</label>
+                    <input type="password" id="passwordUser" name="passwordUser" required placeholder="Masukkan password user">
+                </div>
+
+                <button type="submit" class="btn-submit">Simpan User</button>
+            </form>
+
+            <!-- Tombol Kembali -->
+            <a href="user.html" class="back-btn">Kembali ke Daftar User</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk menangani submit form
+    document.getElementById("formTambahUser").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        // Ambil data dari form
+        const namaUser = document.getElementById("namaUser").value;
+        const emailUser = document.getElementById("emailUser").value;
+        const passwordUser = document.getElementById("passwordUser").value;
+
+        // Menampilkan alert jika form diisi dengan benar
+        alert("User berhasil ditambahkan!\n" +
+              "Nama: " + namaUser + "\n" +
+              "Email: " + emailUser + "\n" +
+              "Password: " + passwordUser);
+        
+        // Reset form setelah berhasil
+        this.reset();
+    });
+</script>
+
+</body>
+</html>

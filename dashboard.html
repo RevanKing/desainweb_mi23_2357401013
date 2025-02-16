@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar untuk tombol navigasi */
+        .sidebar {
+            width: 250px;
+            background-color: #2575fc;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 50%;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #6a11cb;
+        }
+
+        .dashboard-main {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-left: 100px; /* Menggeser konten utama ke kanan */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2575fc;
+        }
+
+        .data-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .data-box {
+            background-color: #e9f0ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .data-box p {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2575fc;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Sidebar untuk tombol navigasi -->
+    <div class="sidebar">
+        <a href="kategori.html">Kategori</a>
+        <a href="produk.html">Produk</a>
+        <a href="user.html">User</a>
+        <a href="login.html" class="btn-logout">Keluar</a>
+    </div>
+
+    <!-- Konten Dashboard -->
+    <div class="dashboard-main">
+        <h2>Dashboard</h2>
+
+        <!-- Pesan Selamat Datang -->
+        <div class="welcome-message">
+            Selamat Datang, <span id="userName">Muhammad Revan Kurniawan</span>!
+        </div>
+
+        <!-- Data Section -->
+        <div class="data-section">
+            <!-- Jumlah Produk -->
+            <div class="data-box">
+                <h3>Produk</h3>
+                <p id="jumlahProduk">235,740</p>
+            </div>
+            
+            <!-- Jumlah Kategori -->
+            <div class="data-box">
+                <h3>Kategori</h3>
+                <p id="jumlahKategori">101</p>
+            </div>
+            
+            <!-- Jumlah User -->
+            <div class="data-box">
+                <h3>User</h3>
+                <p id="jumlahUser">3</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // NIK yang akan digunakan untuk menghitung data
+    const nik = "2357401013";
+
+    // Mengambil nama pengguna dari input URL (untuk contoh, kita gunakan nama statis)
+    const userName = "Muhammad Revan Kurniawan"; // Ganti dengan nama yang sesuai jika dibutuhkan
+
+    // Menampilkan nama pengguna
+    document.getElementById("userName").innerText = userName;
+
+    // Mengambil bagian dari NIK untuk Produk, Kategori, dan User
+    const produk = nik.substring(0, 6);  // 6 digit pertama
+    const kategori = nik.substring(6, 9); // 3 digit berikutnya
+    const user = nik.charAt(9);           // 1 digit terakhir
+
+    // Menampilkan jumlah Produk, Kategori, dan User
+    document.getElementById("jumlahProduk").innerText = produk.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    document.getElementById("jumlahKategori").innerText = kategori;
+    document.getElementById("jumlahUser").innerText = user;
+</script>
+
+</body>
+</html>

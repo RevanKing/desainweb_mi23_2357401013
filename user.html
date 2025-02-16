@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- 2357401013 Muhammad Revan Kurniawan -->
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar untuk tombol navigasi */
+        .sidebar {
+            width: 250px;
+            background-color: #2575fc;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 50%;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #6a11cb;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-left: 100px; /* Menggeser konten utama ke kanan */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .user-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .user-item {
+            background-color: #e9f0ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-item button {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .user-item button:hover {
+            background-color: #d32f2f;
+        }
+
+        .add-user-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            background-color: #2575fc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            margin: 20px auto;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .add-user-btn:hover {
+            background-color: #6a11cb;
+        }
+
+        .back-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            background-color: #ccc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            margin: 20px auto;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background-color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Sidebar untuk tombol navigasi -->
+    <div class="sidebar">
+        <a href="kategori.html">Kategori</a>
+        <a href="produk.html">Produk</a>
+        <a href="user.html">User</a>
+        <a href="login.html" class="btn-logout">Keluar</a>
+    </div>
+
+    <!-- Konten Utama User -->
+    <div class="main-content">
+        <h2>Halaman User</h2>
+
+        <!-- Tombol untuk menambah user -->
+        <a href="tambah_user.html" class="add-user-btn">Tambah User</a>
+
+        <!-- Daftar User -->
+        <ul class="user-list">
+            <!-- User Item 1 -->
+            <li class="user-item">
+                <span>Pak Ahmad</span>
+                <button onclick="hapusUser()">Hapus</button>
+            </li>
+            <!-- User Item 2 -->
+            <li class="user-item">
+                <span>Mas Revan</span>
+                <button onclick="hapusUser()">Hapus</button>
+            </li>
+            <!-- User Item 3 -->
+            <li class="user-item">
+                <span>Pakde Harwan</span>
+                <button onclick="hapusUser()">Hapus</button>
+            </li>
+        </ul>
+
+        <!-- Tombol Kembali -->
+        <a href="dashboard.html" class="back-btn">Kembali ke Dashboard</a>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk menghapus user
+    function hapusUser() {
+        if (confirm("Apakah Anda yakin ingin menghapus user ini?")) {
+            alert("Berhasil menghapus user");
+        }
+    }
+</script>
+
+</body>
+</html>
